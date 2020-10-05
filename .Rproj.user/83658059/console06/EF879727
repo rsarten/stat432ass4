@@ -73,3 +73,105 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ]0;/home/rory/Projects/STAT432/assignment4]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ ls ,,/ass[K[K[K[K[K[K../assignment3
 assignment3.pdf  assignment3.Rmd  assignment3.Rproj  bp_rabbits.csv  permutation_check.R  Q4_d_working.R
 ]0;/home/rory/Projects/STAT432/assignment4]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ [K]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ [K]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ [K]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ [K]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ git add .
+]0;/home/rory/Projects/STAT432/assignment4]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ git status 
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mmodified:   .Rproj.user/83658059/console06/EF879727[m
+	[32mmodified:   .Rproj.user/83658059/console06/INDEX001[m
+	[32mnew file:   .Rproj.user/83658059/sources/prop/CACBEB5[m
+	[32mnew file:   .Rproj.user/83658059/sources/prop/F965D492[m
+	[32mnew file:   .Rproj.user/83658059/sources/prop/INDEX[m
+	[32mnew file:   .Rproj.user/83658059/sources/s-45B8BCB1/340AC6F0[m
+	[32mnew file:   .Rproj.user/83658059/sources/s-45B8BCB1/340AC6F0-contents[m
+	[32mnew file:   .Rproj.user/83658059/sources/s-45B8BCB1/8E1E1AA9[m
+	[32mnew file:   .Rproj.user/83658059/sources/s-45B8BCB1/8E1E1AA9-contents[m
+	[32mnew file:   .Rproj.user/83658059/sources/s-45B8BCB1/A3258AD2[m
+	[32mnew file:   .Rproj.user/83658059/sources/s-45B8BCB1/A3258AD2-contents[m
+	[32mnew file:   .Rproj.user/83658059/sources/s-45B8BCB1/D6C329DE[m
+	[32mnew file:   .Rproj.user/83658059/sources/s-45B8BCB1/D6C329DE-contents[m
+	[32mnew file:   .Rproj.user/shared/notebooks/880ABC42-assignment4/1/8365805945B8BCB1/chunks.json[m
+	[32mnew file:   .Rproj.user/shared/notebooks/880ABC42-assignment4/1/s/ca0tyo6j9tili/000002.csv[m
+	[32mnew file:   .Rproj.user/shared/notebooks/880ABC42-assignment4/1/s/ch3yg8qa0wocj/000002.csv[m
+	[32mnew file:   .Rproj.user/shared/notebooks/880ABC42-assignment4/1/s/chunks.json[m
+	[32mnew file:   .Rproj.user/shared/notebooks/880ABC42-assignment4/1/s/co6832ngtoxgl/000007.csv[m
+	[32mnew file:   .Rproj.user/shared/notebooks/880ABC42-assignment4/1/s/csetup_chunk/000002.csv[m
+	[32mnew file:   .Rproj.user/shared/notebooks/880ABC42-assignment4/1/s/cvrt4e9hf3h8p/000002.csv[m
+	[32mnew file:   .Rproj.user/shared/notebooks/880ABC42-assignment4/1/s/cyrs16tg4lv0b/000002.csv[m
+	[32mnew file:   .Rproj.user/shared/notebooks/paths[m
+	[32mnew file:   a4_2020(2).pdf[m
+	[32mnew file:   assignment4.Rmd[m
+	[32mnew file:   assignment4.pdf[m
+	[32mnew file:   food_prices_kg2019.csv[m
+	[32mnew file:   galaxies.csv[m
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   .Rproj.user/83658059/console06/EF879727[m
+
+]0;/home/rory/Projects/STAT432/assignment4]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ git commit -m "finish Q1"
+[master 450c085] finish Q1
+ 27 files changed, 866 insertions(+), 2 deletions(-)
+ rewrite .Rproj.user/83658059/console06/INDEX001 (69%)
+ create mode 100644 .Rproj.user/83658059/sources/prop/CACBEB5
+ create mode 100644 .Rproj.user/83658059/sources/prop/F965D492
+ create mode 100644 .Rproj.user/83658059/sources/prop/INDEX
+ create mode 100644 .Rproj.user/83658059/sources/s-45B8BCB1/340AC6F0
+ create mode 100644 .Rproj.user/83658059/sources/s-45B8BCB1/340AC6F0-contents
+ create mode 100644 .Rproj.user/83658059/sources/s-45B8BCB1/8E1E1AA9
+ create mode 100644 .Rproj.user/83658059/sources/s-45B8BCB1/8E1E1AA9-contents
+ create mode 100644 .Rproj.user/83658059/sources/s-45B8BCB1/A3258AD2
+ create mode 100644 .Rproj.user/83658059/sources/s-45B8BCB1/A3258AD2-contents
+ create mode 100644 .Rproj.user/83658059/sources/s-45B8BCB1/D6C329DE
+ create mode 100644 .Rproj.user/83658059/sources/s-45B8BCB1/D6C329DE-contents
+ create mode 100644 .Rproj.user/shared/notebooks/880ABC42-assignment4/1/8365805945B8BCB1/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/880ABC42-assignment4/1/s/ca0tyo6j9tili/000002.csv
+ create mode 100644 .Rproj.user/shared/notebooks/880ABC42-assignment4/1/s/ch3yg8qa0wocj/000002.csv
+ create mode 100644 .Rproj.user/shared/notebooks/880ABC42-assignment4/1/s/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/880ABC42-assignment4/1/s/co6832ngtoxgl/000007.csv
+ create mode 100644 .Rproj.user/shared/notebooks/880ABC42-assignment4/1/s/csetup_chunk/000002.csv
+ create mode 100644 .Rproj.user/shared/notebooks/880ABC42-assignment4/1/s/cvrt4e9hf3h8p/000002.csv
+ create mode 100644 .Rproj.user/shared/notebooks/880ABC42-assignment4/1/s/cyrs16tg4lv0b/000002.csv
+ create mode 100644 .Rproj.user/shared/notebooks/paths
+ create mode 100644 a4_2020(2).pdf
+ create mode 100644 assignment4.Rmd
+ create mode 100644 assignment4.pdf
+ create mode 100644 food_prices_kg2019.csv
+ create mode 100644 galaxies.csv
+]0;/home/rory/Projects/STAT432/assignment4]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ git push origin [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kls
+'a4_2020(2).pdf'   assignment4.pdf   assignment4.Rmd   assignment4.Rproj   food_prices_kg2019.csv   galaxies.csv   README.md
+]0;/home/rory/Projects/STAT432/assignment4]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ ls -la
+total 320
+drwxrwxr-x 4 rory rory   4096 Oct  5 22:19  [0m[01;34m.[0m
+drwxr-xr-x 6 rory rory   4096 Oct  5 19:39  [01;34m..[0m
+-rw-r--r-- 1 rory rory 105376 Oct  5 20:00 'a4_2020(2).pdf'
+-rw-rw-r-- 1 rory rory 125753 Oct  5 22:19  assignment4.pdf
+-rw-rw-r-- 1 rory rory   1637 Oct  5 22:19  assignment4.Rmd
+-rw-rw-r-- 1 rory rory    205 Oct  5 19:39  assignment4.Rproj
+-rw-r--r-- 1 rory rory   2457 Oct  5 19:58  food_prices_kg2019.csv
+-rw-r--r-- 1 rory rory   1564 Oct  5 19:58  galaxies.csv
+drwxrwxr-x 8 rory rory   4096 Oct  5 22:20  [01;34m.git[0m
+-rw-rw-r-- 1 rory rory     14 Oct  5 19:42  README.md
+drwxrwxr-x 4 rory rory   4096 Oct  5 19:39  [01;34m.Rproj.user[0m
+]0;/home/rory/Projects/STAT432/assignment4]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ git add .
+]0;/home/rory/Projects/STAT432/assignment4]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ git status 
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mmodified:   .Rproj.user/83658059/console06/EF879727[m
+	[32mmodified:   .Rproj.user/83658059/sources/prop/INDEX[m
+	[32mmodified:   .Rproj.user/shared/notebooks/paths[m
+	[32mnew file:   .gitignore[m
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   .Rproj.user/83658059/console06/EF879727[m
+
+]0;/home/rory/Projects/STAT432/assignment4]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ git status [2Padd .
