@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1601882823624.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "A3258AD2",
+    "lastKnownWriteTime" : 28460584,
+    "last_content_update" : 1601882823624,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "id" : "503785793682444b83704f48009591f2",
+        "name" : "boot_IQR",
+        "title" : "boot_IQR"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "object_explorer"
+}

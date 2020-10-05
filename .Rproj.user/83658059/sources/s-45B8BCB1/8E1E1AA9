@@ -1,0 +1,24 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1601880570296.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "8E1E1AA9",
+    "lastKnownWriteTime" : 1601889585,
+    "last_content_update" : 1601889585906,
+    "path" : "~/Projects/STAT432/assignment4/assignment4.Rmd",
+    "project_path" : "assignment4.Rmd",
+    "properties" : {
+        "cursorPosition" : "27,10",
+        "last_setup_crc32" : "45B8BCB1d0dba1ea",
+        "scrollLine" : "8",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

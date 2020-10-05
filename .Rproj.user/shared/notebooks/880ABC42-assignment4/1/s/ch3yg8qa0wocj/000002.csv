@@ -1,0 +1,8 @@
+"0","## standard 95% bootstrap confidence interval
+(theta_est + 1.96*c(-1, 1)*sd(boot_IQR)) %>% round(3)
+"
+"1","[1]"
+"1"," 4.32"
+"1"," 9.03"
+"1","
+"

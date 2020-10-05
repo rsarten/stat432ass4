@@ -38,3 +38,38 @@ nothing added to commit but untracked files present (use "git add" to track)
 ]0;/home/rory/Projects/STAT432/assignment4]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ ls
 assignment4.Rproj  README.md
 ]0;/home/rory/Projects/STAT432/assignment4]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ git add .
+]0;/home/rory/Projects/STAT432/assignment4]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ git commit -m "more"
+[master ea66d6b] more
+ 6 files changed, 151 insertions(+)
+ create mode 100644 .Rproj.user/83658059/console06/EF879727
+ create mode 100644 .Rproj.user/83658059/console06/EF879727.env
+ create mode 100644 .Rproj.user/83658059/console06/INDEX001
+ create mode 100644 .Rproj.user/83658059/sources/s-45B8BCB1/lock_file
+ create mode 100644 .Rproj.user/shared/notebooks/patch-chunk-names
+ create mode 100644 assignment4.Rproj
+]0;/home/rory/Projects/STAT432/assignment4]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ git push origin master 
+error: cannot run rpostback-askpass: No such file or directory
+Username for 'https://github.com': r traffic       rsarten
+error: cannot run rpostback-askpass: No such file or directory
+Password for 'https://rsarten@github.com': 
+Enumerating objects: 15, done.
+Counting objects:   6% (1/15)Counting objects:  13% (2/15)Counting objects:  20% (3/15)Counting objects:  26% (4/15)Counting objects:  33% (5/15)Counting objects:  40% (6/15)Counting objects:  46% (7/15)Counting objects:  53% (8/15)Counting objects:  60% (9/15)Counting objects:  66% (10/15)Counting objects:  73% (11/15)Counting objects:  80% (12/15)Counting objects:  86% (13/15)Counting objects:  93% (14/15)Counting objects: 100% (15/15)Counting objects: 100% (15/15), done.
+Delta compression using up to 4 threads
+Compressing objects:  11% (1/9)Compressing objects:  22% (2/9)Compressing objects:  33% (3/9)Compressing objects:  44% (4/9)Compressing objects:  55% (5/9)Compressing objects:  66% (6/9)Compressing objects:  77% (7/9)Compressing objects:  88% (8/9)Compressing objects: 100% (9/9)Compressing objects: 100% (9/9), done.
+Writing objects:   7% (1/14)Writing objects:  14% (2/14)Writing objects:  21% (3/14)Writing objects:  28% (4/14)Writing objects:  35% (5/14)Writing objects:  42% (6/14)Writing objects:  50% (7/14)Writing objects:  57% (8/14)Writing objects:  64% (9/14)Writing objects:  71% (10/14)Writing objects:  78% (11/14)Writing objects:  85% (12/14)Writing objects:  92% (13/14)Writing objects: 100% (14/14)Writing objects: 100% (14/14), 4.07 KiB | 4.07 MiB/s, done.
+Total 14 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/rsarten/stat432ass4.git
+   4f514ad..ea66d6b  master -> master
+]0;/home/rory/Projects/STAT432/assignment4]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ git status 
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   .Rproj.user/83658059/console06/EF879727[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;/home/rory/Projects/STAT432/assignment4]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ ls ,,/ass[K[K[K[K[K[K../assignment3
+assignment3.pdf  assignment3.Rmd  assignment3.Rproj  bp_rabbits.csv  permutation_check.R  Q4_d_working.R
+]0;/home/rory/Projects/STAT432/assignment4]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ [K]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ [K]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ [K]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ [K]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ git add .
