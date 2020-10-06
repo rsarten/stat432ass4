@@ -77,3 +77,51 @@ f)
 ```
 
 The lower bound of the confidence interval is above $4. We reject the hypothesis that the test IQR could be below 4NZD at the 5% confidenc interval.
+
+## Question 2
+
+a)
+
+1. Calculate the observed $\hat\beta$ and $\hat\sigma^2$ from the observed data
+2. Draw a sample of the observations with replacement and calculate a new estimate $\hat\beta^*_b$ from the sample
+3. Repeat step 2 $N$ times
+4. Calculate $s.e.(\hat\beta^*)$ as the standard error over the results of the bootstrapped samples
+5. Calculate $\hat\beta \pm1.96\times s.e.(\hat\beta^*)$ (for 95% confidence interval)
+
+b)
+
+```{r Q2_b}
+galaxy <- readr::read_delim("galaxies.csv", delim = ",", col_types = readr::cols())
+velocity <- galaxy$v %>% as.numeric()
+distance <- galaxy$d %>% as.numeric()
+
+############################################
+## Calculations
+calc_beta <- function(v, d) sum(v)/sum(d)
+
+calc_sigma <- function(v, d) {
+  beta_est <- calc_beta(v, d)
+  mean(1/d*(v - beta_est*d)^2)
+}
+############################################
+
+n <- length(distance)
+beta_est <- calc_beta(velocity, distance)
+sigma_est <- calc_sigma(velocity, distance)
+
+N <- 1e4
+set.seed(-1)
+bootstrap_velocity <- 1:N %>% 
+  lapply(function(i) {
+    beta_est*distance + rnorm(n, sd = sqrt(sigma_est * distance))})
+
+bootstrap_beta <- bootstrap_velocity %>% 
+  sapply(calc_beta, distance)
+
+estimate <- mean(bootstrap_beta)
+ci <- beta_est + 1.96 * c(-1, 1) * sd(bootstrap_beta)
+
+results <- c(estimate, ci) %>% round(3)
+names(results) <- c("Estimate", "Lower", "Upper")
+results
+```

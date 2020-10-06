@@ -175,3 +175,61 @@ Changes not staged for commit:
 	[31mmodified:   .Rproj.user/83658059/console06/EF879727[m
 
 ]0;/home/rory/Projects/STAT432/assignment4]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ git status [2Padd .
+]0;/home/rory/Projects/STAT432/assignment4]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ git commit -m "update"
+[master e480cc4] update
+ 4 files changed, 105 insertions(+)
+ create mode 100644 .gitignore
+]0;/home/rory/Projects/STAT432/assignment4]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ git status 
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   .Rproj.user/83658059/console06/EF879727[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;/home/rory/Projects/STAT432/assignment4]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ git push origin master 
+error: cannot run rpostback-askpass: No such file or directory
+Username for 'https://github.com': rsarten
+error: cannot run rpostback-askpass: No such file or directory
+Password for 'https://rsarten@github.com': 
+Enumerating objects: 66, done.
+Counting objects:   1% (1/66)Counting objects:   3% (2/66)Counting objects:   4% (3/66)Counting objects:   6% (4/66)Counting objects:   7% (5/66)Counting objects:   9% (6/66)Counting objects:  10% (7/66)Counting objects:  12% (8/66)Counting objects:  13% (9/66)Counting objects:  15% (10/66)Counting objects:  16% (11/66)Counting objects:  18% (12/66)Counting objects:  19% (13/66)Counting objects:  21% (14/66)Counting objects:  22% (15/66)Counting objects:  24% (16/66)Counting objects:  25% (17/66)Counting objects:  27% (18/66)Counting objects:  28% (19/66)Counting objects:  30% (20/66)Counting objects:  31% (21/66)Counting objects:  33% (22/66)Counting objects:  34% (23/66)Counting objects:  36% (24/66)Counting objects:  37% (25/66)Counting objects:  39% (26/66)Counting objects:  40% (27/66)Counting objects:  42% (28/66)Counting objects:  43% (29/66)Counting objects:  45% (30/66)Counting objects:  46% (31/66)Counting objects:  48% (32/66)Counting objects:  50% (33/66)Counting objects:  51% (34/66)Counting objects:  53% (35/66)Counting objects:  54% (36/66)Counting objects:  56% (37/66)Counting objects:  57% (38/66)Counting objects:  59% (39/66)Counting objects:  60% (40/66)Counting objects:  62% (41/66)Counting objects:  63% (42/66)Counting objects:  65% (43/66)Counting objects:  66% (44/66)Counting objects:  68% (45/66)Counting objects:  69% (46/66)Counting objects:  71% (47/66)Counting objects:  72% (48/66)Counting objects:  74% (49/66)Counting objects:  75% (50/66)Counting objects:  77% (51/66)Counting objects:  78% (52/66)Counting objects:  80% (53/66)Counting objects:  81% (54/66)Counting objects:  83% (55/66)Counting objects:  84% (56/66)Counting objects:  86% (57/66)Counting objects:  87% (58/66)Counting objects:  89% (59/66)Counting objects:  90% (60/66)Counting objects:  92% (61/66)Counting objects:  93% (62/66)Counting objects:  95% (63/66)Counting objects:  96% (64/66)Counting objects:  98% (65/66)Counting objects: 100% (66/66)Counting objects: 100% (66/66), done.
+Delta compression using up to 4 threads
+Compressing objects:   2% (1/45)Compressing objects:   4% (2/45)Compressing objects:   6% (3/45)Compressing objects:   8% (4/45)Compressing objects:  11% (5/45)Compressing objects:  13% (6/45)Compressing objects:  15% (7/45)Compressing objects:  17% (8/45)Compressing objects:  20% (9/45)Compressing objects:  22% (10/45)Compressing objects:  24% (11/45)Compressing objects:  26% (12/45)Compressing objects:  28% (13/45)Compressing objects:  31% (14/45)Compressing objects:  33% (15/45)Compressing objects:  35% (16/45)Compressing objects:  37% (17/45)Compressing objects:  40% (18/45)Compressing objects:  42% (19/45)Compressing objects:  44% (20/45)Compressing objects:  46% (21/45)Compressing objects:  48% (22/45)Compressing objects:  51% (23/45)Compressing objects:  53% (24/45)Compressing objects:  55% (25/45)Compressing objects:  57% (26/45)Compressing objects:  60% (27/45)Compressing objects:  62% (28/45)Compressing objects:  64% (29/45)Compressing objects:  66% (30/45)Compressing objects:  68% (31/45)Compressing objects:  71% (32/45)Compressing objects:  73% (33/45)Compressing objects:  75% (34/45)Compressing objects:  77% (35/45)Compressing objects:  80% (36/45)Compressing objects:  82% (37/45)Compressing objects:  84% (38/45)Compressing objects:  86% (39/45)Compressing objects:  88% (40/45)Compressing objects:  91% (41/45)Compressing objects:  93% (42/45)Compressing objects:  95% (43/45)Compressing objects:  97% (44/45)Compressing objects: 100% (45/45)Compressing objects: 100% (45/45), done.
+Writing objects:   1% (1/56)Writing objects:   3% (2/56)Writing objects:   5% (3/56)Writing objects:   7% (4/56)Writing objects:   8% (5/56)Writing objects:  10% (6/56)Writing objects:  12% (7/56)Writing objects:  14% (8/56)Writing objects:  16% (9/56)Writing objects:  17% (10/56)Writing objects:  19% (11/56)Writing objects:  21% (12/56)Writing objects:  23% (13/56)Writing objects:  25% (14/56)Writing objects:  26% (15/56)Writing objects:  30% (17/56)Writing objects:  32% (18/56)Writing objects:  33% (19/56)Writing objects:  35% (20/56)Writing objects:  37% (21/56)Writing objects:  39% (22/56)Writing objects:  41% (23/56)Writing objects:  42% (24/56)Writing objects:  44% (25/56)Writing objects:  46% (26/56)Writing objects:  48% (27/56)Writing objects:  50% (28/56)Writing objects:  51% (29/56)Writing objects:  53% (30/56)Writing objects:  55% (31/56)Writing objects:  57% (32/56)Writing objects:  58% (33/56)Writing objects:  60% (34/56)Writing objects:  62% (35/56)Writing objects:  64% (36/56)Writing objects:  66% (37/56)Writing objects:  67% (38/56)Writing objects:  69% (39/56)Writing objects:  71% (40/56)Writing objects:  73% (41/56)Writing objects:  75% (42/56)Writing objects:  76% (43/56)Writing objects:  78% (44/56)Writing objects:  80% (45/56)Writing objects:  82% (46/56)Writing objects:  83% (47/56)Writing objects:  85% (48/56)Writing objects:  87% (49/56)Writing objects:  89% (50/56)Writing objects:  91% (51/56)Writing objects:  92% (52/56)Writing objects:  94% (53/56)Writing objects:  96% (54/56)Writing objects:  98% (55/56)Writing objects: 100% (56/56)Writing objects: 100% (56/56), 235.66 KiB | 14.73 MiB/s, done.
+Total 56 (delta 9), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas:   0% (0/9)[Kremote: Resolving deltas:  11% (1/9)[Kremote: Resolving deltas:  22% (2/9)[Kremote: Resolving deltas:  33% (3/9)[Kremote: Resolving deltas:  44% (4/9)[Kremote: Resolving deltas:  66% (6/9)[Kremote: Resolving deltas:  77% (7/9)[Kremote: Resolving deltas:  88% (8/9)[Kremote: Resolving deltas: 100% (9/9)[Kremote: Resolving deltas: 100% (9/9), completed with 1 local object.[K
+To https://github.com/rsarten/stat432ass4.git
+   ea66d6b..e480cc4  master -> master
+]0;/home/rory/Projects/STAT432/assignment4]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ SHUT[K[K[K[Kshutdown now
+]0;/home/rory/Projects/STAT432/assignment4]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ git status 
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   .Rproj.user/83658059/console06/EF879727[m
+	[31mmodified:   .Rproj.user/83658059/console06/INDEX001[m
+	[31mmodified:   .Rproj.user/83658059/sources/prop/CACBEB5[m
+	[31mmodified:   .Rproj.user/83658059/sources/prop/F965D492[m
+	[31mmodified:   .Rproj.user/83658059/sources/prop/INDEX[m
+	[31mdeleted:    .Rproj.user/83658059/sources/s-45B8BCB1/340AC6F0[m
+	[31mdeleted:    .Rproj.user/83658059/sources/s-45B8BCB1/340AC6F0-contents[m
+	[31mdeleted:    .Rproj.user/83658059/sources/s-45B8BCB1/8E1E1AA9[m
+	[31mdeleted:    .Rproj.user/83658059/sources/s-45B8BCB1/8E1E1AA9-contents[m
+	[31mdeleted:    .Rproj.user/83658059/sources/s-45B8BCB1/A3258AD2[m
+	[31mdeleted:    .Rproj.user/83658059/sources/s-45B8BCB1/A3258AD2-contents[m
+	[31mdeleted:    .Rproj.user/83658059/sources/s-45B8BCB1/D6C329DE[m
+	[31mdeleted:    .Rproj.user/83658059/sources/s-45B8BCB1/D6C329DE-contents[m
+	[31mdeleted:    .Rproj.user/83658059/sources/s-45B8BCB1/lock_file[m
+	[31mmodified:   .Rproj.user/shared/notebooks/880ABC42-assignment4/1/s/chunks.json[m
+	[31mmodified:   .gitignore[m
+	[31mmodified:   assignment4.Rmd[m
+	[31mmodified:   assignment4.pdf[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;/home/rory/Projects/STAT432/assignment4]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ git add .
