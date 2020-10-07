@@ -93,7 +93,8 @@ b)
 ```{r Q2_b}
 galaxy <- readr::read_delim("galaxies.csv", delim = ",", col_types = readr::cols())
 velocity <- galaxy$v %>% as.numeric()
-distance <- galaxy$d %>% as.numeric()
+galaxy$d <- as.numeric(galaxy$d)
+distance <- galaxy$d
 
 ############################################
 ## Calculations
@@ -110,7 +111,7 @@ beta_est <- calc_beta(velocity, distance)
 sigma_est <- calc_sigma(velocity, distance)
 
 N <- 1e4
-set.seed(-1)
+set.seed(1)
 bootstrap_velocity <- 1:N %>% 
   lapply(function(i) {
     beta_est*distance + rnorm(n, sd = sqrt(sigma_est * distance))})
@@ -125,3 +126,44 @@ results <- c(estimate, ci) %>% round(3)
 names(results) <- c("Estimate", "Lower", "Upper")
 results
 ```
+
+Using the boot package
+
+```{r Q2_b_bootpackage}
+boot_beta <- function(dataset, beta_est, sigma_est) {
+  v <- beta_est*dataset$d + rnorm(n, sd = sqrt(sigma_est * dataset$d))
+  calc_beta(v, dataset$d)
+}
+
+library(boot)
+set.seed(1)
+bootstrap_stats <- boot(galaxy,
+                        sim = "parametric",
+                        statistic = boot_beta,
+                        R = N,
+                        beta_est = beta_est,
+                        sigma_est = sigma_est)
+
+bootstrap_stats_se <- bootstrap_stats$t %>% sd() %>% round(3)
+
+estimate <- mean(bootstrap_stats$t)
+ci <- beta_est + 1.96 * c(-1, 1) * bootstrap_stats_se
+
+results <- c(estimate, ci) %>% round(3)
+names(results) <- c("Estimate", "Lower", "Upper")
+results
+```
+
+c)
+
+$y_i\sim N(\beta x_i, \sigma^2 x_i)$
+
+$\begin{aligned}L(\beta, \sigma | \boldsymbol{y}) =& \prod\limits_{i=1}^n \left[ (2\pi\sigma^2x_i)^{1/2} \exp(-\dfrac{(y_i - \beta x_i)^2}{2\sigma^2x_i}) \right] \\ \ell = & -\dfrac{1}{n} \sum\limits_{i=1}^n\log(2\pi \sigma^2) -\dfrac{1}{n} \sum\limits_{i=1}^n\log(x_i) - \dfrac{1}{2\sigma^2} \sum\limits_{i=1}^nx_i^{-1}(y_i-\beta x_i)^2 \\ \end{aligned}$
+
+Solving for $\hat\beta$ we only need the last term.
+
+$\begin{aligned} \dfrac{\partial\ell}{\partial\beta} = & \dfrac{1}{\sigma^2}\sum\limits_{i=1}^n(y_i-\beta x_i)\quad \text{setting equal to 0} \\ \dfrac{1}{\sigma^2}\sum\limits_{i=1}^ny_i = & \beta \dfrac{1}{\sigma^2}\sum\limits_{i=1}^nx_i \\ \beta =& \dfrac{\sum_{i=1}^ny_i}{\sum_{i=1}^nx_i} \\ \hat\beta =& \dfrac{\bar{y}}{\bar{x}}  \end{aligned}$
+
+Solving for $\hat\sigma^2$
+
+$\begin{aligned} \dfrac{\partial\ell}{\partial\sigma^2} = & -\dfrac{n}{2\sigma^2} + \dfrac{1}{2\sigma^4}\sum\limits_{i=1}^nx_i^{-1}(y_i-\beta x_i)^2 \quad \text{setting equal to 0} \\ \dfrac{n}{2\sigma^2} =& \dfrac{1}{2\sigma^4}\sum\limits_{i=1}^nx_i^{-1}(y_i-\beta x_i)^2 \\ \dfrac{2\sigma^4}{2\sigma^2} = & \dfrac{1}{n}\sum\limits_{i=1}^nx_i^{-1}(y_i-\beta x_i)^2 \\ \hat\sigma^2 =& \dfrac{1}{n}\sum\limits_{i=1}^n \dfrac{1}{x_i}(y_i-\beta x_i)^2  \end{aligned}$
