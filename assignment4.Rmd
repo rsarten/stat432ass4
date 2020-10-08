@@ -9,6 +9,7 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+options(scipen=999)
 library(magrittr)
 ```
 
@@ -125,6 +126,15 @@ ci <- beta_est + 1.96 * c(-1, 1) * sd(bootstrap_beta)
 results <- c(estimate, ci) %>% round(3)
 names(results) <- c("Estimate", "Lower", "Upper")
 results
+
+## Reserve results for part d)
+bootstrap_sigma2 <- bootstrap_velocity %>% 
+  sapply(calc_sigma, distance)
+bootstrap_sigma2_est <- mean(bootstrap_sigma2)
+ci <- sigma_est + 1.96 * c(-1, 1) * sd(bootstrap_sigma2)
+sigma2_results <- c(bootstrap_sigma2_est, ci)
+bootstrap_results <- rbind(results, sigma2_results)
+rownames(bootstrap_results) <- c("Beta", "Sigma2")
 ```
 
 Using the boot package
@@ -137,21 +147,21 @@ boot_beta <- function(dataset, beta_est, sigma_est) {
 
 library(boot)
 set.seed(1)
-bootstrap_stats <- boot(galaxy,
-                        sim = "parametric",
-                        statistic = boot_beta,
-                        R = N,
-                        beta_est = beta_est,
-                        sigma_est = sigma_est)
+boot_stats <- boot(galaxy,
+                   sim = "parametric",
+                   statistic = boot_beta,
+                   R = N,
+                   beta_est = beta_est,
+                   sigma_est = sigma_est)
 
-bootstrap_stats_se <- bootstrap_stats$t %>% sd() %>% round(3)
+boot_stats_se <- boot_stats$t %>% sd() %>% round(3)
 
-estimate <- mean(bootstrap_stats$t)
-ci <- beta_est + 1.96 * c(-1, 1) * bootstrap_stats_se
+estimate <- mean(boot_stats$t)
+ci <- beta_est + 1.96 * c(-1, 1) * boot_stats_se
 
-results <- c(estimate, ci) %>% round(3)
-names(results) <- c("Estimate", "Lower", "Upper")
-results
+boot_results <- c(estimate, ci) %>% round(3)
+names(boot_results) <- c("Estimate", "Lower", "Upper")
+boot_results
 ```
 
 c)
@@ -186,14 +196,33 @@ result <- optim(par = c(40, 250),
                 control = list(fnscale = -1),
                 hessian = TRUE)
 
-result
-
-results <- c(estimate, ci) %>% round(3)
-names(results) <- c("Estimate", "Lower", "Upper")
-results
-
 opt_mle_se <- solve(-result$hessian) %>% diag() %>% sqrt() %>% round(3)
 ci <- result$par[1] + c(-1, 1) * 1.96 * opt_mle_se[1]
+likelihood_beta_results <- c(result$par[1], ci) %>% round(3)
+names(likelihood_beta_results) <- c("Estimate", "Lower", "Upper")
+#likelihood_beta_results
+
 ci <- result$par[2] + c(-1, 1) * 1.96 * opt_mle_se[2]
+likelihood_sigma_results <- c(result$par[2], ci) %>% round(3)
+names(likelihood_sigma_results) <- c("Estimate", "Lower", "Upper")
+#likelihood_sigma_results
+
+output <- rbind(likelihood_beta_results, likelihood_sigma_results)
+rownames(output) <- c("Beta", "Sigma2")
+#output
 ```
+
+
+```{r Q2_d_results}
+knitr::kable(bootstrap_results, caption = "Bootstrap Estimates")
+knitr::kable(output, caption = "optim Estimates")
+```
+
+The estimates for $\hat\beta$ are very similar. The 95% confidence interval widths are `r bootstrap_results[5] - bootstrap_results[3]` and `r output[5] - output[3]`
+
+The estimates for $\hat\sigma^2$ are more divergent. The 95% confidence interval widths are `r round(bootstrap_results[6] - bootstrap_results[4], 1)` and `r round(output[6] - output[4], 1)`. This is not surprising as the log-likelihood function is not symmetric around the test statistic.
+
+## Question 3
+
+a)
 
