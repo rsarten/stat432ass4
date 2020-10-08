@@ -167,3 +167,33 @@ $\begin{aligned} \dfrac{\partial\ell}{\partial\beta} = & \dfrac{1}{\sigma^2}\sum
 Solving for $\hat\sigma^2$
 
 $\begin{aligned} \dfrac{\partial\ell}{\partial\sigma^2} = & -\dfrac{n}{2\sigma^2} + \dfrac{1}{2\sigma^4}\sum\limits_{i=1}^nx_i^{-1}(y_i-\beta x_i)^2 \quad \text{setting equal to 0} \\ \dfrac{n}{2\sigma^2} =& \dfrac{1}{2\sigma^4}\sum\limits_{i=1}^nx_i^{-1}(y_i-\beta x_i)^2 \\ \dfrac{2\sigma^4}{2\sigma^2} = & \dfrac{1}{n}\sum\limits_{i=1}^nx_i^{-1}(y_i-\beta x_i)^2 \\ \hat\sigma^2 =& \dfrac{1}{n}\sum\limits_{i=1}^n \dfrac{1}{x_i}(y_i-\beta x_i)^2  \end{aligned}$
+
+d)
+
+```{r Q2_d}
+loglikelihood <- function(params, x, y) {
+  n <- length(x)
+  beta_ <- params[1]
+  sigma2_ <- params[2]
+  -(n/2)*log(2*pi*sigma2_) - 0.5 * sum(log(x)) - (1/(2*sigma2_)) * sum((y - beta_*x)^2 / x)
+}
+
+result <- optim(par = c(40, 250),
+                fn = loglikelihood,
+                x = distance, y = velocity,
+                lower = c(0, 250), upper = c(Inf, Inf),
+                method = "L-BFGS-B",
+                control = list(fnscale = -1),
+                hessian = TRUE)
+
+result
+
+results <- c(estimate, ci) %>% round(3)
+names(results) <- c("Estimate", "Lower", "Upper")
+results
+
+opt_mle_se <- solve(-result$hessian) %>% diag() %>% sqrt() %>% round(3)
+ci <- result$par[1] + c(-1, 1) * 1.96 * opt_mle_se[1]
+ci <- result$par[2] + c(-1, 1) * 1.96 * opt_mle_se[2]
+```
+
