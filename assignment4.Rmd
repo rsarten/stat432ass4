@@ -125,14 +125,18 @@ ci <- beta_est + 1.96 * c(-1, 1) * sd(bootstrap_beta)
 
 results <- c(estimate, ci) %>% round(3)
 names(results) <- c("Estimate", "Lower", "Upper")
-results
+results ## boostrap results for beta
 
-## Reserve results for part d)
+
 bootstrap_sigma2 <- bootstrap_velocity %>% 
   sapply(calc_sigma, distance)
 bootstrap_sigma2_est <- mean(bootstrap_sigma2)
 ci <- sigma_est + 1.96 * c(-1, 1) * sd(bootstrap_sigma2)
 sigma2_results <- c(bootstrap_sigma2_est, ci)
+names(sigma2_results) <- c("Estimate", "Lower", "Upper")
+sigma2_results ## bootstrap results for sigma squared
+
+## Reserve results for part d)
 bootstrap_results <- rbind(results, sigma2_results)
 rownames(bootstrap_results) <- c("Beta", "Sigma2")
 ```
