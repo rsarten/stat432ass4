@@ -368,3 +368,43 @@ To https://github.com/rsarten/stat432ass4.git
    78484c3..33ec46f  master -> master
 ]0;/home/rory/Projects/STAT432/assignment4]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ shutdown now
 ]0;/home/rory/Projects/STAT432/assignment4]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ git add .
+]0;/home/rory/Projects/STAT432/assignment4]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ git status 
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mmodified:   .Rproj.user/83658059/console06/EF879727[m
+	[32mmodified:   .Rproj.user/83658059/console06/EF879727.env[m
+	[32mmodified:   .Rproj.user/83658059/console06/INDEX001[m
+	[32mmodified:   .Rproj.user/83658059/sources/prop/CACBEB5[m
+	[32mmodified:   .Rproj.user/shared/notebooks/880ABC42-assignment4/1/s/chunks.json[m
+	[32mmodified:   assignment4.Rmd[m
+	[32mmodified:   assignment4.pdf[m
+	[32mmodified:   question3_play.R[m
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   .Rproj.user/83658059/console06/EF879727[m
+
+]0;/home/rory/Projects/STAT432/assignment4]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ git commit -m "function for Q3"
+[master b2749b5] function for Q3
+ 8 files changed, 115 insertions(+), 13 deletions(-)
+ rewrite .Rproj.user/83658059/console06/INDEX001 (86%)
+ rewrite question3_play.R (79%)
+]0;/home/rory/Projects/STAT432/assignment4]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ git push origin master 
+error: cannot run rpostback-askpass: No such file or directory
+Username for 'https://github.com': rsarten
+error: cannot run rpostback-askpass: No such file or directory
+Password for 'https://rsarten@github.com': 
+Enumerating objects: 39, done.
+Counting objects:   2% (1/39)Counting objects:   5% (2/39)Counting objects:   7% (3/39)Counting objects:  10% (4/39)Counting objects:  12% (5/39)Counting objects:  15% (6/39)Counting objects:  17% (7/39)Counting objects:  20% (8/39)Counting objects:  23% (9/39)Counting objects:  25% (10/39)Counting objects:  28% (11/39)Counting objects:  30% (12/39)Counting objects:  33% (13/39)Counting objects:  35% (14/39)Counting objects:  38% (15/39)Counting objects:  41% (16/39)Counting objects:  43% (17/39)Counting objects:  46% (18/39)Counting objects:  48% (19/39)Counting objects:  51% (20/39)Counting objects:  53% (21/39)Counting objects:  56% (22/39)Counting objects:  58% (23/39)Counting objects:  61% (24/39)Counting objects:  64% (25/39)Counting objects:  66% (26/39)Counting objects:  69% (27/39)Counting objects:  71% (28/39)Counting objects:  74% (29/39)Counting objects:  76% (30/39)Counting objects:  79% (31/39)Counting objects:  82% (32/39)Counting objects:  84% (33/39)Counting objects:  87% (34/39)Counting objects:  89% (35/39)Counting objects:  92% (36/39)Counting objects:  94% (37/39)Counting objects:  97% (38/39)Counting objects: 100% (39/39)Counting objects: 100% (39/39), done.
+Delta compression using up to 4 threads
+Compressing objects:   5% (1/17)Compressing objects:  11% (2/17)Compressing objects:  17% (3/17)Compressing objects:  23% (4/17)Compressing objects:  29% (5/17)Compressing objects:  35% (6/17)Compressing objects:  41% (7/17)Compressing objects:  47% (8/17)Compressing objects:  52% (9/17)Compressing objects:  58% (10/17)Compressing objects:  64% (11/17)Compressing objects:  70% (12/17)Compressing objects:  76% (13/17)Compressing objects:  82% (14/17)Compressing objects:  88% (15/17)Compressing objects:  94% (16/17)Compressing objects: 100% (17/17)Compressing objects: 100% (17/17), done.
+Writing objects:   5% (1/20)Writing objects:  10% (2/20)Writing objects:  15% (3/20)Writing objects:  20% (4/20)Writing objects:  25% (5/20)Writing objects:  30% (6/20)Writing objects:  35% (7/20)Writing objects:  40% (8/20)Writing objects:  45% (9/20)Writing objects:  50% (10/20)Writing objects:  55% (11/20)Writing objects:  60% (12/20)Writing objects:  65% (13/20)Writing objects:  70% (14/20)Writing objects:  75% (15/20)Writing objects:  80% (16/20)Writing objects:  85% (17/20)Writing objects:  90% (18/20)Writing objects:  95% (19/20)Writing objects: 100% (20/20)Writing objects: 100% (20/20), 58.38 KiB | 5.31 MiB/s, done.
+Total 20 (delta 9), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas:   0% (0/9)[Kremote: Resolving deltas:  11% (1/9)[Kremote: Resolving deltas:  22% (2/9)[Kremote: Resolving deltas:  33% (3/9)[Kremote: Resolving deltas:  44% (4/9)[Kremote: Resolving deltas:  55% (5/9)[Kremote: Resolving deltas:  66% (6/9)[Kremote: Resolving deltas:  77% (7/9)[Kremote: Resolving deltas:  88% (8/9)[Kremote: Resolving deltas: 100% (9/9)[Kremote: Resolving deltas: 100% (9/9), completed with 9 local objects.[K
+To https://github.com/rsarten/stat432ass4.git
+   33ec46f..b2749b5  master -> master
+]0;/home/rory/Projects/STAT432/assignment4]0;rory@rory-laptop: ~/Projects/STAT432/assignment4[01;32mrory@rory-laptop[00m:[01;34m~/Projects/STAT432/assignment4[00m$ add [K[K[K[Kgit add .

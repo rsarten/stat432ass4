@@ -120,16 +120,16 @@ bootstrap_velocity <- 1:N %>%
 bootstrap_beta <- bootstrap_velocity %>% 
   sapply(calc_beta, distance)
 
+bootstrap_sigma2 <- bootstrap_velocity %>% 
+  sapply(calc_sigma, distance)
+
 estimate <- mean(bootstrap_beta)
 ci <- beta_est + 1.96 * c(-1, 1) * sd(bootstrap_beta)
-
 results <- c(estimate, ci) %>% round(3)
 names(results) <- c("Estimate", "Lower", "Upper")
 results ## boostrap results for beta
 
 
-bootstrap_sigma2 <- bootstrap_velocity %>% 
-  sapply(calc_sigma, distance)
 bootstrap_sigma2_est <- mean(bootstrap_sigma2)
 ci <- sigma_est + 1.96 * c(-1, 1) * sd(bootstrap_sigma2)
 sigma2_results <- c(bootstrap_sigma2_est, ci)
