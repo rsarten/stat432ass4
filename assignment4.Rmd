@@ -129,7 +129,6 @@ results <- c(estimate, ci) %>% round(3)
 names(results) <- c("Estimate", "Lower", "Upper")
 results ## boostrap results for beta
 
-
 bootstrap_sigma2_est <- mean(bootstrap_sigma2)
 ci <- sigma_est + 1.96 * c(-1, 1) * sd(bootstrap_sigma2)
 sigma2_results <- c(bootstrap_sigma2_est, ci)
@@ -230,3 +229,143 @@ The estimates for $\hat\sigma^2$ are more divergent. The 95% confidence interval
 
 a)
 
+**irreducible**: the chain must be irreducible because it must be able to fully explore the parameter space. It must be able to reach any point in the space given enough steps.
+
+**aperiodic**: the chain must be aperiodic to avoid cycling between sets of values at regular intervals, this would prevent adequate mixing.
+
+b)
+
+Function setup code
+
+```{r Q3_MH_function}
+dirichletMH <- function(n, start, alpha, prop_width) {
+  
+  x_values <- vector("list", n)
+  proposals <- vector("list", n)
+  accepted <- rep(0, n)
+  
+  ## initialise chain
+  x_values[[1]] <- start
+  accepted[1] <- 1
+  
+  proposal_value <- function(prev_x, pos, prop_width)
+    runif(1, min = prev_x[pos] - prop_width, max = prev_x[pos] + prop_width)
+  
+  for (i in 2:n) {
+    prev_x <- x_values[[i-1]]
+    x1 <- proposal_value(prev_x, 1, prop_width)
+    x2 <- proposal_value(prev_x, 2, prop_width)
+    x3 <- 1 - x1 - x2
+    y <- c(x1, x2, x3)
+    proposals[[i]] <- c(x1, x2, x3)
+    
+    r <- 
+      mixtools::ddirichlet(x = y, alpha)/
+      mixtools::ddirichlet(x = prev_x, alpha)
+    
+    aprob <- min(1, r)
+    if (runif(1) < aprob) {
+      x_values[[i]] <- y
+      accepted[i] <- 1
+    } else {
+      x_values[[i]] <- prev_x
+      accepted[i] <- 0
+    }
+  }
+  list(x_values = x_values, proposals = proposals, accepted = accepted)
+}
+
+## initialise common variables
+burnin <- 1000
+nmcmc <- 4000
+lastk <- (nmcmc+1):(burnin+nmcmc) ## last 1000 values
+start <- c(0.1, 0.1, 0.8)
+alpha <- c(1, 1, 1)
+```
+
+###Proposal Distribution: Uniform up to 0.5 either side of the current point
+
+i.
+
+```{r Q3_0.5_i, warning=FALSE}
+set.seed(101)
+results <- dirichletMH(burnin + nmcmc, start, alpha, prop_width = 0.5)
+x_prop1 <- do.call(rbind, results$x_values) %>% as.data.frame()
+names(x_prop1) <- paste0("x", 1:3)
+```
+
+ii.
+
+```{r Q3_0.5_ii}
+plot(1:burnin, x_prop1$x1[1:burnin], type = "l", 
+     main = "Trace plot of burn-in values for x1", xlab = "index", ylab = "x1")
+plot(lastk, x_prop1$x1[lastk], type = "l", 
+     main = "Trace plot of last thousand values for x1", xlab = "index", ylab = "x1")
+```
+
+iii. Acceptance ratio for last 1000 points in the chain
+
+```{r Q3_0.5_iii}
+mean(x_prop1$x1[lastk])
+```
+
+iv.
+
+The burn-in is probably long enough as the trace plot shows it generally approaching as much of a convergence as is achieved in later stages. 
+
+It is hard to say how well it is mixing; there are a lot of points where x1 gets very high or low where it remains for too long, but it does appear to be exploring the space appropriately around a convergence.
+
+
+###Proposal Distribution: Uniform up to 0.1 either side of the current point
+
+i.
+
+```{r Q3_0.1_i, warning=FALSE}
+set.seed(101)
+results <- dirichletMH(burnin + nmcmc, start, alpha, prop_width = 0.1)
+x_prop2 <- do.call(rbind, results$x_values) %>% as.data.frame()
+names(x_prop2) <- paste0("x", 1:3)
+```
+
+ii.
+
+```{r Q3_0.1_ii}
+plot(1:burnin, x_prop2$x1[1:burnin], type = "l", 
+     main = "Trace plot of burn-in values for x1", xlab = "index", ylab = "x1")
+plot(lastk, x_prop2$x1[lastk], type = "l", 
+     main = "Trace plot of last thousand values for x1", xlab = "index", ylab = "x1")
+```
+
+iii. Acceptance ratio for last 1000 points in the chain
+
+```{r Q3_0.1_iii}
+mean(x_prop2$x1[lastk])
+```
+
+iv.
+
+The burn-in is likely never going to be long enough to achieve convergence with this proposal.
+
+It is mixing very poorly; it is not moving freely around the space and values are too correlated with previous values.
+
+c)
+
+There are still some reservations about the first (0.5) proposal, but it is clearly mixing and converging much better than the alternative.
+
+```{r Q3_c}
+hist(x_prop1$x1[lastk], main = "Histogram of last 1000 x1 values from 0.5 proposal", xlab = "x1", breaks = 10)
+```
+
+d)
+
+```{r Q3_d}
+set.seed(100)
+rDirichlet <- function(ndraw, alpha) {
+  gamdraw <- rgamma(ndraw, shape = alpha, rate = 1)
+  gamdraw/sum(gamdraw)
+}
+xdir.gen <- do.call(rbind, lapply(1:1000, function(i) rDirichlet(3, 1)))
+hist(xdir.gen[,1])
+```
+
+The general shape of the distributions looks similar, suggesting the MCMC chain is an appropriate distribution and given more values for both sets of data they would likely converge to the same shape.

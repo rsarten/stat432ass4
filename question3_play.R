@@ -22,7 +22,9 @@ dirichletMH <- function(n, start, alpha, prop_width) {
     y <- c(x1, x2, x3)
     proposals[[i]] <- c(x1, x2, x3)
     
-    r <- ddirichlet(x = y, alpha)/ddirichlet(x = prev_x, alpha)
+    r <- 
+      mixtools::ddirichlet(x = y, alpha)/
+      mixtools::ddirichlet(x = prev_x, alpha)
     
     aprob <- min(1, r)
     if (runif(1) < aprob) {
